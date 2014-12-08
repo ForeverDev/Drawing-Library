@@ -117,4 +117,19 @@ function module.polygon(nodes, parent, flags)
 	return setmetatable(lines, meta)
 end
 
+function module.cube(x, y, width, parent, flags)
+	module.line(x, y, x + width, y)
+	module.line(x + width, y, x + width, y + width)
+	module.line(x + width, y + width, x, y + width)
+	module.line(x, y + width, x, y)
+	module.line(x + width/2, y + width/2, x + width + width/2, y + width/2)
+	module.line(x + width + width/2, y + width/2, x + width + width/2, y + width + width/2)
+	module.line(x + width + width/2, y + width + width/2, x + width/2, y + width + width/2)
+	module.line(x + width/2, y + width + width/2, x + width/2, y + width/2)
+	module.line(x, y, x + width/2, y + width/2)
+	module.line(x + width, y, x + width + width/2, y + width/2)
+	module.line(x + width, y + width, x + width + width/2, y + width + width/2)
+	module.line(x, y + width, x + width/2, y + width + width/2)
+end
+
 return module
